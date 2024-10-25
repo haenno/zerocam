@@ -1,11 +1,14 @@
-# save an image from raspberry pi camera to a file with a timestamp
+from picamera2 import Picamera2
 
-from picamzero import Camera
-import time
+picam2 = Picamera2()
+config = picam2.create_still_configuration()
+picam2.configure(config)
 
-cam = Camera()
-cam.start_preview()
-timestamp = time.strftime('%Y%m%d-%H%M%S')
-filename = 'image-' + timestamp + '.jpg'
-cam.take_photo(filename)
+picam2.start()
+
+np_array = picam2.capture_array()
+print(np_array)
+filename = f"new_image.jpg"
+picam2.capture_file(filename)
+picam2.stop()
 
