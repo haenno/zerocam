@@ -25,8 +25,11 @@ if [ $(git -C $THIS_SCRIPT_DIR rev-list HEAD...origin/main --count) != 0 ]; then
     # copy ./html/placeholder.jpg to /var/www/html/image.jpg
     sudo cp -r $THIS_SCRIPT_DIR/html/placeholder.jpg /var/www/html/image.jpg
 
-    # copy last 100 log lines to /var/www/html/log.txt
-    sudo tail -n 100 $THIS_SCRIPT_DIR/github-update.log >/var/www/html/github-update.log.txt
+    # get last 100 log lines
+    tail -n 100 $THIS_SCRIPT_DIR/github-update.log >$THIS_SCRIPT_DIR/updatelog.txt
+
+    # copy to /var/www/html/updatelog.txt
+    sudo cp -r $THIS_SCRIPT_DIR/updatelog.txt /var/www/html/updatelog.txt
 
     echo "$now --> After update work > done!"
 
