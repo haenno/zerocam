@@ -1,6 +1,6 @@
 #!/bin/bash
 # quick script to update zerocam, install in cron with crontab -e and add the following line:
-# */5 * * * * /-your-path-to-this-script-/github-update.sh >> /var/log/github-update.log 2>&1
+# */5 * * * * ~/zerocam/github-update.sh >> ~/zerocam/github-update.log 2>&1
 # it checks if the remote git repo is newer than the local one and if so, it pulls the changes and restarts the containers
 
 THIS_SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
