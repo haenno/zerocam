@@ -11,16 +11,12 @@
   </head>
   <body>
     <h1>Zerocam</h1>
-    <p>This image reloads every second.</p>
+    <p>Reload page to see the latest image.</p>
+    <button onclick="window.location.reload();">Reload</button>
     <img src="http://37.24.233.50/image.jpg" alt="Zerocam" />
     <p>
       Open last update log:
       <a href="http://37.24.233.50/updatelog.txt">updatelog.txt</a>
     </p>
-    <script>
-      setTimeout(function () {
-        window.location.reload(1);
-      }, 1000);
-    </script>
   </body>
 </html>
