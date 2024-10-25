@@ -26,3 +26,8 @@
     1. `sudo apt install lighttpd`
     2. `sudo systemctl enable lighttpd.service`
 11. Setup git update script: WIP
+    1. Create ssh key: `ssh-keygen -t ed25519 -C "your_email@example.com"`, `eval "$(ssh-agent -s)"` and `ssh-add ~/.ssh/id_ed25519`
+    2. Add ssh key to GitHub
+    3. CD into home, then: `git clone git@github.com:haenno/zerocam.git`
+    4. Make update script executable: `chmod +x ~/zerocam/github_update.sh`
+    5. Add script to crontab: `crontab -e` and add `*/5 * * * * /home/zero/zerocam/github_update.sh >> /var/log/github-update.log 2>&1`
