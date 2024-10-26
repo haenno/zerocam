@@ -12,7 +12,7 @@ sudo cp -r ~/zerocam/new_image.jpg /var/www/html/image.jpg
 now=$(date "+%F_%H-%M-%S")
 # create folder if not exist: /var/www/html/images/
 sudo mkdir -p /var/www/html/images
-sudo cp -r ~/zerocam/new_image.jpg /var/www/html/image_$now.jpg
+sudo cp -r ~/zerocam/new_image.jpg /var/www/html/images/$now.jpg
 
 # get last 100 log lines
 tail -n 100 ~/zerocam/get-image.log >~/zerocam/imagelog.txt
