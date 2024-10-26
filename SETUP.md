@@ -32,3 +32,6 @@
     4. Make update script executable: `chmod +x ~/zerocam/github_update.sh`
     5. Add script to crontab: `crontab -e` and add `*/5* ** * ~/zerocam/github-update.sh >> ~/zerocam/github-update.log 2>&1
 12. Install picam `sudo apt install python3-picamera2 python3-full`
+13. Allow lighttp directory listing: `sudo nano /etc/lighttpd/lighttpd.conf` and add `dir-listing.activate = "enable"`
+14. Restart lighttpd: `sudo systemctl restart lighttpd.service`
+15.
